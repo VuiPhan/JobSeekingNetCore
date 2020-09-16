@@ -1,8 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Configuration;
 
-namespace JobSeekingNetCore.Models.DB
+namespace JobSeekingNetCore.Models.DBs
 {
     public partial class JobSeekingContext : DbContext
     {
@@ -41,9 +42,14 @@ namespace JobSeekingNetCore.Models.DB
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            // add IConfigurationRoot  to get connection string 
+            IConfigurationRoot configuration = new ConfigurationBuilder()
+            .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+            .AddJsonFile("appsettings.json")
+            .Build();
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Name=JobSeekingDB");
+                optionsBuilder.UseSqlServer(configuration.GetConnectionString("JobSeekingDB"));
             }
         }
 
@@ -152,6 +158,8 @@ namespace JobSeekingNetCore.Models.DB
                 entity.Property(e => e.Description).HasMaxLength(200);
 
                 entity.Property(e => e.Notes).HasMaxLength(200);
+
+                entity.Property(e => e.Notes2).HasMaxLength(200);
 
                 entity.Property(e => e.RecId).HasColumnName("RecID");
 

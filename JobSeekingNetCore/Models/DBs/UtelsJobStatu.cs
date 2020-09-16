@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace JobSeekingNetCore.Models.DB
+namespace JobSeekingNetCore.Models.DBs
 {
-    public partial class UtelsJobStatus
+    public partial class UtelsJobStatu
     {
-        public UtelsJobStatus()
+        public UtelsJobStatu()
         {
-            UteappJobInformation = new HashSet<UteappJobInformation>();
+            UteappJobInformations = new HashSet<UteappJobInformation>();
         }
 
         public int RecId { get; set; }
@@ -15,6 +15,6 @@ namespace JobSeekingNetCore.Models.DB
         public string JobStatusName { get; set; }
         public string JobStatusName2 { get; set; }
 
-        public virtual ICollection<UteappJobInformation> UteappJobInformation { get; set; }
+        public virtual ICollection<UteappJobInformation> UteappJobInformations { get; set; }
     }
 }

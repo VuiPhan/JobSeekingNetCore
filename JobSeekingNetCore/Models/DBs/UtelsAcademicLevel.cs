@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace JobSeekingNetCore.Models.DB
+namespace JobSeekingNetCore.Models.DBs
 {
     public partial class UtelsAcademicLevel
     {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace JobSeekingNetCore.Models.DB
+namespace JobSeekingNetCore.Models.DBs
 {
-    public partial class UteworkJobs
+    public partial class UteworkJob
     {
         public int RecId { get; set; }
         public int JobId { get; set; }

@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace JobSeekingNetCore.Models.DB
+namespace JobSeekingNetCore.Models.DBs
 {
-    public partial class UteappAppSkill
+    public partial class UteappAppCertificate
     {
         public int RecId { get; set; }
         public string CandidateCode { get; set; }
-        public string SkillId { get; set; }
+        public string CertificateId { get; set; }
         public string Description { get; set; }
-        public string Notes { get; set; }
 
         public virtual UteappApplicant CandidateCodeNavigation { get; set; }
-        public virtual UtelsSkill Skill { get; set; }
+        public virtual UtelsCertificate Certificate { get; set; }
     }
 }
