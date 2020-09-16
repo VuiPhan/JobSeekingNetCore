@@ -17,7 +17,7 @@ namespace JobSeekingNetCore.Controllers
        [HttpGet]
         public IEnumerable<UtesysComboboxList> Get()
         {
-            var x = db.UtesysComboboxList.Select(p => p).ToList();
+            var x = db.UtesysComboboxLists.Select(p => p).ToList();
             return x;
         }
     }
